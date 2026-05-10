@@ -9,16 +9,21 @@ import pandas as pd
 # print(df)
 
 df = pd.read_csv('data.csv')
-print(df.head())
 
-subsetloc = df.loc[3:5, ['AQ', 'fail']]
-print(subsetloc)
+missing_values = df.isnull().sum()
+print("Missing values in each column:")
+print(missing_values)
+# print(df.head())
+print(df.isna().sum())
 
-subsetiloc = df.iloc[3:6, 1:3]
-print(subsetiloc)
+# subsetloc = df.loc[3:5, ['AQ', 'fail']]
+# print(subsetloc)
 
-hightemp = df[df['tempMode'] > 6]
-print(hightemp)
+# subsetiloc = df.iloc[3:6, 1:3]
+# print(subsetiloc)
+
+# hightemp = df[df['tempMode'] > 6]
+# print(hightemp)
 # # print(df.shape)
 # # print(df.dtypes)
 # # print(df.describe())
